@@ -32,9 +32,9 @@ train_file = "train.csv"
 raw_data = pd.read_csv(train_file)
 
 
-x, y = prep_data(raw_data)
+x_train, y_train = prep_data(raw_data)
 #to show the format of the input
-print(shape(x),shape(y))
+print(shape(x_train),shape(y_train))
 
 
 
@@ -62,7 +62,22 @@ digitmodel.add(Dense(num_classes, activation='softmax'))
 digitmodel.compile(loss=keras.losses.categorical_crossentropy,
               optimizer='adam',
               metrics=['accuracy'])
-digitmodel.fit(x, y,
+digitmodel.fit(x_train, y_train,
           batch_size=128,
           epochs=2,
           validation_split = 0.2)
+
+#predict the testing results
+test_file = "test.csv"
+test_data = pd.read_csv(test_file)
+
+x_as_array = test_data.values[:,:]
+
+num_images_test = test_data.shape[0]
+x_shaped_array = x_as_array.reshape(num_images_test, img_rows, img_cols, 1)
+
+x_test = x_shaped_array / 255
+
+predictions = digitmodel.predict(x_test)
+#most_likely_labels = decode_predictions(predictions, top=3)
+print(shape(predictions))
