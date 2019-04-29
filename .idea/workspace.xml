@@ -4,8 +4,7 @@
     <list default="true" id="169456be-14b0-4273-9982-6fb1ed4f14d8" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/digit final/digit.py" afterPath="$PROJECT_DIR$/digit final/digit.py" />
-      <change beforePath="$PROJECT_DIR$/~$dterm report.docx" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/~WRL0941.tmp" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/digit final/results.csv" afterPath="$PROJECT_DIR$/digit final/results.csv" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -90,8 +89,8 @@
       <file leaf-file-name="digit.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/digit final/digit.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="284">
-              <caret line="89" column="18" lean-forward="true" selection-start-line="89" selection-start-column="18" selection-end-line="89" selection-end-column="18" />
+            <state relative-caret-position="455">
+              <caret line="99" column="0" lean-forward="true" selection-start-line="99" selection-start-column="0" selection-end-line="99" selection-end-column="0" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
               </folding>
@@ -767,8 +766,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/digit final/digit.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="284">
-          <caret line="89" column="18" lean-forward="true" selection-start-line="89" selection-start-column="18" selection-end-line="89" selection-end-column="18" />
+        <state relative-caret-position="455">
+          <caret line="99" column="0" lean-forward="true" selection-start-line="99" selection-start-column="0" selection-end-line="99" selection-end-column="0" />
           <folding>
             <element signature="e#0#18#0" expanded="true" />
           </folding>

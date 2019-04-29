@@ -83,16 +83,17 @@ predictions = digitmodel.predict(x_test)
 print(shape(predictions))
 
 #define output
-#output=[[0 for x in range(28000)] for y in range(2)]
-#for row in output:
-#    count=1
-#    row[0]=count
-#    count=count+1
-
-#for examples in predictions:
-#    for label in examples:
-#        print(1)
+output=[[0 for x in range(2)] for y in range(28000)]
+count = 1
+#array=np.array(predictions)
+for row in output:
+    row[0] = count
+    count = count+1
+    row[1] = np.argmax(predictions[count-2])
 
 
-dataframe = pd.DataFrame(predictions)
+
+dataframe = pd.DataFrame(output,columns=['ImageId', 'Label'])
 dataframe.to_csv("results.csv", index=False, sep=',')
+
+#compare the accuarcy
