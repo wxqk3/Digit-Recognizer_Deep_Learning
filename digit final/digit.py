@@ -81,3 +81,18 @@ x_test = x_shaped_array / 255
 predictions = digitmodel.predict(x_test)
 #most_likely_labels = decode_predictions(predictions, top=3)
 print(shape(predictions))
+
+#define output
+#output=[[0 for x in range(28000)] for y in range(2)]
+#for row in output:
+#    count=1
+#    row[0]=count
+#    count=count+1
+
+#for examples in predictions:
+#    for label in examples:
+#        print(1)
+
+
+dataframe = pd.DataFrame(predictions)
+dataframe.to_csv("results.csv", index=False, sep=',')
