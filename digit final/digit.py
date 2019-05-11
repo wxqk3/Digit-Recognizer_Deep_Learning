@@ -4,7 +4,7 @@ from numpy import *
 from sklearn.model_selection import train_test_split
 from tensorflow.python import keras
 from tensorflow.python.keras.models import Sequential
-from tensorflow.python.keras.layers import Dense, Flatten, Conv2D, Dropout
+from tensorflow.python.keras.layers import Dense, Flatten, Conv2D, Dropout, MaxPool2D
 
 
 img_rows, img_cols = 28, 28
@@ -48,7 +48,23 @@ digitmodel.add(Conv2D(20, kernel_size=(3, 3),
                  input_shape=(img_rows, img_cols, 1)))
 
 #second layer Conv2D,strides=2 to make it faster
-digitmodel.add(Conv2D(20, kernel_size=(3, 3), activation='relu', strides=2))
+digitmodel.add(Conv2D(20, kernel_size=(3, 3), activation='relu'))
+
+#improvement
+
+digitmodel.add(MaxPool2D(pool_size=(2,2)))
+digitmodel.add(Dropout(0.25))
+
+
+
+digitmodel.add(Conv2D(40, kernel_size=(3, 3), activation='relu'))
+digitmodel.add(Conv2D(40, kernel_size=(3, 3), activation='relu'))
+digitmodel.add(MaxPool2D(pool_size=(2,2)))
+digitmodel.add(Dropout(0.25))
+
+
+
+
 
 #3rd layer Flatten layer
 digitmodel.add(Flatten())
@@ -56,8 +72,14 @@ digitmodel.add(Flatten())
 #4th layer Dense layer with 128 neurons
 digitmodel.add(Dense(128, activation='relu'))
 
+#improvement
+
+digitmodel.add(Dropout(0.5))
+
 #5th layer prediction layer ,Dense layer softmax activation function
 digitmodel.add(Dense(num_classes, activation='softmax'))
+
+
 
 digitmodel.compile(loss=keras.losses.categorical_crossentropy,
               optimizer='adam',
@@ -97,3 +119,4 @@ dataframe = pd.DataFrame(output,columns=['ImageId', 'Label'])
 dataframe.to_csv("results.csv", index=False, sep=',')
 
 #compare the accuarcy
+#upload to kaggle , also could compare with standard.csv
